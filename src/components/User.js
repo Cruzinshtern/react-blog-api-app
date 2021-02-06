@@ -3,20 +3,16 @@ import style from "../styles/User.module.css"
 
 const User = ({user, setUserDetail}) => {
 
-    const userInfo = () => {
+    const openModal = () => {
         setUserDetail(user);
     }
 
     return (
-        <div className={style.user_card} >
+        <div className={style.user_card} onDoubleClick={openModal}>
             <h2>Name: {user.name}</h2>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
             <p>Phone: {user.phone}</p>
-            <div>
-                <button onClick={userInfo}>More info</button>
-                <button>Posts</button>
-            </div>
         </div>
     )
 }
